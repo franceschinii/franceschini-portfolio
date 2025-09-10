@@ -37,9 +37,9 @@ async function submit() {
     name.value = ''
     email.value = ''
     message.value = ''
-  } catch (e: any) {
+  } catch (e: unknown) {
     status.value = 'error'
-    errorMsg.value = e?.message || 'Erro inesperado'
+    errorMsg.value = (e instanceof Error ? e.message : String(e)) || 'Erro inesperado'
     // fallback em dev
     if (import.meta.env.DEV) {
       const subject = encodeURIComponent(`[Portfolio] Contato de ${name.value}`)
