@@ -5,7 +5,7 @@ import { quotes } from '@/data/quotes'
 const i = ref(0)
 let t: number | undefined
 onMounted(() => {
-  t = window.setInterval(() => { i.value = (i.value + 1) % quotes.length }, 6000)
+  t = window.setInterval(() => { i.value = (i.value + 1) % quotes.length }, 12000)
 })
 onBeforeUnmount(() => { if (t) window.clearInterval(t) })
 </script>
