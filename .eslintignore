@@ -1,0 +1,20 @@
+# Diretórios para ignorar
+dist/
+dist-ssr/
+coverage/
+node_modules/
+
+# Arquivos gerados
+*.log
+*.lock
+
+# Arquivos de configuração
+*.config.js
+*.config.ts
+vite.config.*
+tailwind.config.*
+postcss.config.*
+
+# Arquivos de build
+public/
+.vite/

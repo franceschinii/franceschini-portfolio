@@ -1,0 +1,33 @@
+export type Project = {
+  slug: string
+  title: string
+  description: string
+  tags: string[]
+  link?: string
+  embedUrl?: string
+  instagram?: string
+}
+
+export const projects: Project[] = [
+  {
+    slug: 'matsuko-industrial',
+    title: 'Aplicações industriais — Matsuko',
+    description: 'Front‑end de aplicações industriais com Vue.js e TypeScript; portal integrado via API; funcionalidades para gestão de equipamentos.',
+    tags: ['vue', 'typescript', 'api'],
+    link: 'https://github.com/franceschinimatsuko',
+  },
+  {
+    slug: 'colegio-maranata-site',
+    title: 'Site institucional — Colégio Maranata',
+    description: 'Desenvolvimento do site, criação de layout e manutenção (mar/2024 – mai/2024).',
+    tags: ['web', 'layout', 'manutenção'],
+    embedUrl: 'https://colegiomaranata.com.br',
+  },
+  {
+    slug: 'grupo-piovezani-ecommerce',
+    title: 'E‑commerce — Grupo Piovezani',
+    description: 'Concepção de layout e desenvolvimento de e‑commerce (ago/2023 – out/2023).',
+    tags: ['ecommerce', 'web', 'design'],
+    instagram: 'https://www.instagram.com/grupopiovezani/?hl=en',
+  },
+]

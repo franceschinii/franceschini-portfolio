@@ -1,0 +1,13 @@
+# Diretórios para ignorar
+dist/
+dist-ssr/
+coverage/
+node_modules/
+
+# Arquivos gerados
+*.log
+*.lock
+
+# Arquivos de configuração
+*.config.js
+*.config.ts
