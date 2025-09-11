@@ -131,3 +131,10 @@ temp/
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Claude Code settings
+.claude/
+
+# Vite temp files
+node_modules/.tmp/
+node_modules/.vite/
