@@ -9,6 +9,8 @@ import { Icon } from '@iconify/vue'
 import CvDialog from '@/components/modals/CvDialog.vue'
 import LiquidBackground from '@/components/ui/liquid-background.vue'
 import FrostedCard from '@/components/ui/frosted-card.vue'
+import ContainerScroll from '@/components/ui/ContainerScroll.vue'
+import TextGenerateEffect from '@/components/ui/TextGenerateEffect.vue'
 
 const phrases = [
   'Plataformas SaaS sob medida',
@@ -45,6 +47,64 @@ onBeforeUnmount(() => { if (t) window.clearInterval(t); if (typingTimer) window.
 </script>
 
 <template>
+  <!-- Container Scroll with Code Preview -->
+  <ContainerScroll>
+    <template #title>
+      <div class="mb-32 md:mb-48">
+        <TextGenerateEffect
+          words="Transformando ideias em soluções digitais reais"
+          class="text-3xl font-bold text-center text-white md:text-5xl mb-6"
+          :delay="500"
+        />
+        <TextGenerateEffect
+          words="Cada linha de código é pensada para resolver problemas complexos e automatizar processos"
+          class="text-lg text-center text-blue-200 max-w-2xl mx-auto"
+          :delay="1000"
+        />
+      </div>
+    </template>
+    <template #card>
+      <div class="relative w-full h-full bg-gray-900 rounded-lg overflow-hidden">
+        <!-- VS Code Mockup -->
+        <div class="relative z-10 bg-gray-800 h-8 flex items-center px-4 border-b border-gray-700">
+          <div class="flex space-x-2">
+            <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+            <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+            <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+          </div>
+          <div class="ml-6 text-sm text-gray-300">HeroIndustrial.vue</div>
+        </div>
+        <!-- Code Content -->
+        <div class="relative z-10 p-4 text-sm font-mono overflow-auto h-[calc(100%-2rem)]">
+          <div class="text-gray-400">1</div>
+          <div class="text-gray-400">2</div>
+          <div><span class="text-gray-400">3</span><span class="text-blue-400">&lt;template&gt;</span></div>
+          <div><span class="text-gray-400">4</span><span class="text-white">  &lt;</span><span class="text-red-400">section</span><span class="text-yellow-400"> class</span><span class="text-white">=</span><span class="text-green-400">"container mx-auto px-4 py-16 md:py-24"</span><span class="text-white">&gt;</span></div>
+          <div><span class="text-gray-400">5</span><span class="text-white">    &lt;</span><span class="text-red-400">div</span><span class="text-yellow-400"> class</span><span class="text-white">=</span><span class="text-green-400">"grid items-center gap-12 md:grid-cols-2"</span><span class="text-white">&gt;</span></div>
+          <div><span class="text-gray-400">6</span><span class="text-white">      &lt;</span><span class="text-red-400">motion.div</span><span class="text-white">&gt;</span></div>
+          <div><span class="text-gray-400">7</span><span class="text-white">        &lt;</span><span class="text-red-400">h1</span><span class="text-yellow-400"> class</span><span class="text-white">=</span><span class="text-green-400">"text-3xl font-bold tracking-tight md:text-5xl"</span><span class="text-white">&gt;</span></div>
+          <div><span class="text-gray-400">8</span><span class="text-white">          Olá, eu sou &lt;</span><span class="text-red-400">span</span><span class="text-yellow-400"> class</span><span class="text-white">=</span><span class="text-green-400">"shimmer"</span><span class="text-white">&gt;{{ profile.name }}&lt;/</span><span class="text-red-400">span</span><span class="text-white">&gt;</span></div>
+          <div><span class="text-gray-400">9</span><span class="text-white">        &lt;/</span><span class="text-red-400">h1</span><span class="text-white">&gt;</span></div>
+          <div><span class="text-gray-400">10</span><span class="text-white">        &lt;</span><span class="text-red-400">p</span><span class="text-yellow-400"> class</span><span class="text-white">=</span><span class="text-green-400">"mt-4 text-base text-muted-foreground"</span><span class="text-white">&gt;</span></div>
+          <div><span class="text-gray-400">11</span><span class="text-white">          Crio &lt;</span><span class="text-red-400">strong</span><span class="text-white">&gt;plataformas web (SaaS)&lt;/</span><span class="text-red-400">strong</span><span class="text-white">&gt; para automatizar</span></div>
+          <div><span class="text-gray-400">12</span><span class="text-white">        &lt;/</span><span class="text-red-400">p</span><span class="text-white">&gt;</span></div>
+          <div><span class="text-gray-400">13</span><span class="text-white">      &lt;/</span><span class="text-red-400">motion.div</span><span class="text-white">&gt;</span></div>
+          <div><span class="text-gray-400">14</span><span class="text-blue-400">&lt;/template&gt;</span></div>
+          <div class="text-gray-400">15</div>
+          <div><span class="text-gray-400">16</span><span class="text-blue-400">&lt;script</span><span class="text-yellow-400"> setup</span><span class="text-yellow-400"> lang</span><span class="text-white">=</span><span class="text-green-400">"ts"</span><span class="text-blue-400">&gt;</span></div>
+          <div><span class="text-gray-400">17</span><span class="text-purple-400">import</span><span class="text-white"> { </span><span class="text-blue-300">ref</span><span class="text-white">, </span><span class="text-blue-300">onMounted</span><span class="text-white"> } </span><span class="text-purple-400">from</span><span class="text-green-400"> 'vue'</span></div>
+          <div><span class="text-gray-400">18</span><span class="text-purple-400">import</span><span class="text-white"> { </span><span class="text-blue-300">Button</span><span class="text-white"> } </span><span class="text-purple-400">from</span><span class="text-green-400"> '@/components/ui/button'</span></div>
+          <div class="text-gray-400">19</div>
+          <div><span class="text-gray-400">20</span><span class="text-purple-400">const</span><span class="text-blue-300"> phrases</span><span class="text-white"> = [</span></div>
+          <div><span class="text-gray-400">21</span><span class="text-white">  </span><span class="text-green-400">'Plataformas SaaS sob medida'</span><span class="text-white">,</span></div>
+          <div><span class="text-gray-400">22</span><span class="text-white">  </span><span class="text-green-400">'Automação de processos ponta a ponta'</span><span class="text-white">,</span></div>
+          <div><span class="text-gray-400">23</span><span class="text-white">]</span></div>
+          <div><span class="text-blue-400">&lt;/script&gt;</span></div>
+        </div>
+      </div>
+    </template>
+  </ContainerScroll>
+
   <section class="container mx-auto px-4 py-16 md:py-24">
     <div class="grid items-center gap-12 md:grid-cols-2">
       <motion.div :initial="{ opacity: 0, y: 20 }" :animate="{ opacity: 1, y: 0 }" :transition="{ duration: 0.5 }">
