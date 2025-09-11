@@ -1,18 +1,18 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { quotes } from '@/data/quotes'
+import { reflections } from '@/data/reflections'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card'
 
-// Deterministic quote of the day
+// Deterministic reflection of the day
 const todayIndex = computed(() => {
   const now = new Date()
   const start = new Date(now.getFullYear(), 0, 0)
   const diff = Number(now) - Number(start)
   const oneDay = 1000 * 60 * 60 * 24
   const day = Math.floor(diff / oneDay)
-  return day % quotes.length
+  return day % reflections.length
 })
-const q = computed(() => quotes[todayIndex.value])
+const r = computed(() => reflections[todayIndex.value])
 </script>
 
 <template>
@@ -24,11 +24,10 @@ const q = computed(() => quotes[todayIndex.value])
       </CardHeader>
       <CardContent>
         <figure class="text-sm md:text-base">
-          <blockquote class="italic">“{{ q.text }}”</blockquote>
-          <figcaption class="mt-1 text-xs text-muted-foreground">— {{ q.author }}</figcaption>
+          <blockquote class="italic">{{ r.text }}</blockquote>
+          <figcaption class="mt-1 text-xs text-muted-foreground">{{ r.source }}</figcaption>
         </figure>
       </CardContent>
     </Card>
   </section>
 </template>
-
