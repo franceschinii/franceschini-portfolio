@@ -17,9 +17,9 @@ const ctnDom = ref<HTMLDivElement | null>(null);
 
 let animateId: number;
 let canvas: HTMLCanvasElement;
-let gl: WebGLRenderingContext;
-let program: WebGLProgram;
-let buffer: WebGLBuffer;
+let gl: WebGLRenderingContext | null;
+let program: WebGLProgram | null;
+let buffer: WebGLBuffer | null;
 
 // Vertex Shader
 const vertexShader = `
@@ -78,6 +78,8 @@ const fragmentShader = `
 `;
 
 function createShader(type: number, source: string): WebGLShader | null {
+  if (!gl) return null;
+  
   const shader = gl.createShader(type);
   if (!shader) return null;
   
@@ -94,6 +96,8 @@ function createShader(type: number, source: string): WebGLShader | null {
 }
 
 function createProgram(): WebGLProgram | null {
+  if (!gl) return null;
+  
   const vertShader = createShader(gl.VERTEX_SHADER, vertexShader);
   const fragShader = createShader(gl.FRAGMENT_SHADER, fragmentShader);
   
@@ -116,7 +120,7 @@ function createProgram(): WebGLProgram | null {
 }
 
 function resize() {
-  if (!ctnDom.value || !canvas) return;
+  if (!ctnDom.value || !canvas || !gl) return;
   
   const rect = ctnDom.value.getBoundingClientRect();
   canvas.width = rect.width;
@@ -126,6 +130,8 @@ function resize() {
 }
 
 function render(time: number) {
+  if (!gl || !program || !buffer) return;
+  
   gl.clear(gl.COLOR_BUFFER_BIT);
   
   gl.useProgram(program);
