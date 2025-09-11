@@ -78,7 +78,7 @@ export const profile: Profile = {
   skills: [
     {
       title: 'Plataformas Web',
-      skills: ['Vue.js', 'TypeScript', 'HTML5/CSS', 'Tailwind CSS', 'Design System'],
+      skills: ['Vue.js', 'TypeScript', 'HTML5/CSS', 'Bootstrap 5', 'Tailwind CSS', 'Design System'],
     },
     { title: 'Back‑end e Dados', skills: ['Node.js', 'SQL', 'Microsoft SQL Server'] },
     { title: 'UI/UX', skills: ['Figma', 'Responsive Design'] },

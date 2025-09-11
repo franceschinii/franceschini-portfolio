@@ -7,6 +7,8 @@ import { motion } from 'motion-v'
 import { Icon } from '@iconify/vue'
 // typing effect for value propositions
 import CvDialog from '@/components/modals/CvDialog.vue'
+import LiquidBackground from '@/components/ui/liquid-background.vue'
+import FrostedCard from '@/components/ui/frosted-card.vue'
 
 const phrases = [
   'Plataformas SaaS sob medida',
@@ -78,18 +80,21 @@ onBeforeUnmount(() => { if (t) window.clearInterval(t); if (typingTimer) window.
         </div>
       </motion.div>
       <motion.div class="relative" :initial="{ opacity: 0, y: 10 }" :animate="{ opacity: 1, y: 0 }" :transition="{ duration: 0.6, delay: 0.15 }">
-        <div class="relative aspect-[4/3] w-full overflow-hidden rounded-xl border bg-white/40 dark:bg-white/5">
-          <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/20 dark:from-primary/20 dark:to-secondary/30" />
-          <div class="absolute inset-0 flex items-center justify-center">
-            <div class="grid grid-cols-3 gap-6 opacity-70">
-              <Icon icon="logos:vue" class="h-10 w-10" />
-              <Icon icon="logos:typescript-icon" class="h-10 w-10" />
-              <Icon icon="logos:tailwindcss-icon" class="h-10 w-10" />
-              <Icon icon="simple-icons:shadcnui" class="h-8 w-8" />
-              <Icon icon="logos:arduino" class="h-10 w-10" />
-              <Icon icon="mdi:chip" class="h-9 w-9" />
+        <div class="relative aspect-[4/3] w-full overflow-hidden rounded-xl border">
+          <LiquidBackground class="absolute inset-0">
+            <div class="absolute inset-0 flex items-center justify-center z-10">
+              <FrostedCard class="p-3 sm:p-4">
+                <div class="grid grid-cols-3 gap-3 sm:gap-4 md:gap-6">
+                  <Icon icon="logos:vue" class="h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 filter drop-shadow-lg" />
+                  <Icon icon="logos:typescript-icon" class="h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 filter drop-shadow-lg" />
+                  <Icon icon="logos:tailwindcss-icon" class="h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 filter drop-shadow-lg" />
+                  <Icon icon="simple-icons:shadcnui" class="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 filter drop-shadow-lg" />
+                  <Icon icon="logos:arduino" class="h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 filter drop-shadow-lg" />
+                  <Icon icon="logos:bootstrap" class="h-7 w-7 sm:h-8 sm:w-8 md:h-9 md:w-9 filter drop-shadow-lg" />
+                </div>
+              </FrostedCard>
             </div>
-          </div>
+          </LiquidBackground>
         </div>
       </motion.div>
     </div>

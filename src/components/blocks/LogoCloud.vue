@@ -23,7 +23,7 @@ import { Icon } from '@iconify/vue'
           <Icon icon="logos:arduino" width="38" height="38" />
         </div>
         <div class="flex items-center justify-center opacity-70 grayscale hover:opacity-100 hover:grayscale-0 transition">
-          <Icon icon="mdi:chip" width="34" height="34" />
+          <Icon icon="logos:bootstrap" width="36" height="36" />
         </div>
       </div>
 
