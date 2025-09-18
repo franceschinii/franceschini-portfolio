@@ -7,7 +7,7 @@ import { motion } from 'motion-v'
 import { Icon } from '@iconify/vue'
 // typing effect for value propositions
 import CvDialog from '@/components/modals/CvDialog.vue'
-import LiquidBackground from '@/components/ui/liquid-background.vue'
+import SilkBackground from '@/components/ui/SilkBackground.vue'
 import FrostedCard from '@/components/ui/frosted-card.vue'
 import ContainerScroll from '@/components/ui/ContainerScroll.vue'
 import TextGenerateEffect from '@/components/ui/TextGenerateEffect.vue'
@@ -17,10 +17,25 @@ const phrases = [
   'Automação de processos ponta a ponta',
   'Integrações com máquinas e IoT',
 ]
+
+const technologies = [
+  'logos:javascript',
+  'logos:typescript-icon',
+  'logos:react',
+  'logos:vue',
+  'logos:nextjs-icon',
+  'logos:tailwindcss-icon',
+  'simple-icons:shadcnui',
+  'logos:bootstrap',
+  'logos:arduino'
+]
+
 const idx = ref(0)
 const typed = ref('')
+const currentTechIndex = ref(0)
 let t: number | undefined
 let typingTimer: number | undefined
+let techCarouselTimer: number | undefined
 onMounted(() => {
   const typePhrase = () => {
     const phrase = phrases[idx.value]
@@ -42,8 +57,21 @@ onMounted(() => {
     step()
   }
   typePhrase()
+
+  // Tech carousel
+  const rotateTechnologies = () => {
+    techCarouselTimer = window.setTimeout(() => {
+      currentTechIndex.value = (currentTechIndex.value + 1) % technologies.length
+      rotateTechnologies()
+    }, 1500) as unknown as number
+  }
+  rotateTechnologies()
 })
-onBeforeUnmount(() => { if (t) window.clearInterval(t); if (typingTimer) window.clearTimeout(typingTimer) })
+onBeforeUnmount(() => {
+  if (t) window.clearInterval(t);
+  if (typingTimer) window.clearTimeout(typingTimer);
+  if (techCarouselTimer) window.clearTimeout(techCarouselTimer);
+})
 </script>
 
 <template>
@@ -141,20 +169,22 @@ onBeforeUnmount(() => { if (t) window.clearInterval(t); if (typingTimer) window.
       </motion.div>
       <motion.div class="relative" :initial="{ opacity: 0, y: 10 }" :animate="{ opacity: 1, y: 0 }" :transition="{ duration: 0.6, delay: 0.15 }">
         <div class="relative aspect-[4/3] w-full overflow-hidden rounded-xl border">
-          <LiquidBackground class="absolute inset-0">
-            <div class="absolute inset-0 flex items-center justify-center z-10">
-              <FrostedCard class="p-3 sm:p-4">
-                <div class="grid grid-cols-3 gap-3 sm:gap-4 md:gap-6">
-                  <Icon icon="logos:vue" class="h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 filter drop-shadow-lg" />
-                  <Icon icon="logos:typescript-icon" class="h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 filter drop-shadow-lg" />
-                  <Icon icon="logos:tailwindcss-icon" class="h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 filter drop-shadow-lg" />
-                  <Icon icon="simple-icons:shadcnui" class="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 filter drop-shadow-lg" />
-                  <Icon icon="logos:arduino" class="h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 filter drop-shadow-lg" />
-                  <Icon icon="logos:bootstrap" class="h-7 w-7 sm:h-8 sm:w-8 md:h-9 md:w-9 filter drop-shadow-lg" />
-                </div>
-              </FrostedCard>
-            </div>
-          </LiquidBackground>
+          <SilkBackground class="absolute inset-0" />
+          <div class="absolute inset-0 flex items-center justify-center z-10">
+            <FrostedCard class="p-3 sm:p-4">
+              <div class="grid grid-cols-3 gap-3 sm:gap-4 md:gap-6">
+                <Icon icon="logos:javascript" class="h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 filter drop-shadow-lg" />
+                <Icon icon="logos:typescript-icon" class="h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 filter drop-shadow-lg" />
+                <Icon icon="logos:react" class="h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 filter drop-shadow-lg" />
+                <Icon icon="logos:vue" class="h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 filter drop-shadow-lg" />
+                <Icon icon="logos:nextjs-icon" class="h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 filter drop-shadow-lg" />
+                <Icon icon="logos:tailwindcss-icon" class="h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 filter drop-shadow-lg" />
+                <Icon icon="simple-icons:shadcnui" class="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 filter drop-shadow-lg" />
+                <Icon icon="logos:bootstrap" class="h-7 w-7 sm:h-8 sm:w-8 md:h-9 md:w-9 filter drop-shadow-lg" />
+                <Icon icon="logos:arduino" class="h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 filter drop-shadow-lg" />
+              </div>
+            </FrostedCard>
+          </div>
         </div>
       </motion.div>
     </div>
@@ -188,4 +218,16 @@ onBeforeUnmount(() => { if (t) window.clearInterval(t); if (typingTimer) window.
 .fade-up-enter-from { opacity: 0; transform: translateY(6px); }
 .fade-up-leave-to { opacity: 0; transform: translateY(-6px); }
 .fade-up-leave-active { position: absolute; }
+
+.tech-fade-enter-active, .tech-fade-leave-active {
+  transition: all 0.4s ease-in-out;
+}
+.tech-fade-enter-from {
+  opacity: 0;
+  transform: scale(0.8) rotate(-10deg);
+}
+.tech-fade-leave-to {
+  opacity: 0;
+  transform: scale(1.1) rotate(10deg);
+}
 </style>

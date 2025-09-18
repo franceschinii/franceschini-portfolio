@@ -20,8 +20,8 @@ export const projects: Project[] = [
   {
     slug: 'smartsuko-platform',
     title: 'SMARTSUKO — Matsuko',
-    description: 'Ecossistema industrial completo com múltiplos sistemas integrados; chatbot IA conversacional com criação de tickets GLPI; sistema KPI avançado com 400+ indicadores e projeções estatísticas; gestão dinâmica de arquivos multi‑formato; dashboards interativos com 8+ tipos de gráficos; sistema de tickets com fluxo automatizado; controle de acesso granular; gestão de grupos e notificações; arquitetura Vue 3 + TypeScript modular; WebSocket real‑time; build dual‑mode otimizado; cache TTL inteligente; SSL/HTTPS configurado.',
-    tags: ['vue', 'typescript', 'bootstrap', 'ai-chatbot', 'kpi-system', 'ticket-system', 'file-management', 'industrial'],
+    description: 'Plataforma SaaS industrial robusta para automação completa de processos empresariais. Inclui chatbot IA conversacional integrado ao GLPI, sistema KPI empresarial com 400+ indicadores e projeções estatísticas, gestão inteligente de arquivos multi-formato, dashboards interativos avançados e sistema de tickets com fluxo automatizado. Arquitetura moderna Vue 3 + TypeScript com WebSocket real-time e otimizações de performance.',
+    tags: ['Vue 3', 'TypeScript', 'Bootstrap 5', 'IA Conversacional', 'Sistema KPI', 'GLPI', 'WebSocket', 'SaaS Industrial', 'Dashboards', 'Cache TTL'],
     cards: [
       {
         title: 'Chatbot IA Conversacional',
@@ -34,9 +34,11 @@ export const projects: Project[] = [
           'Respostas baseadas em palavras-chave'
         ],
         techDetails: [
-          'Sistema reativo baseado em composables Vue',
-          'API REST com endpoint dedicado',
-          'Autenticação segura via JWT Bearer token'
+          'Arquitetura reativa com Composition API Vue 3',
+          'Engine IA personalizado com processamento de contexto',
+          'API REST dedicada com autenticação JWT Bearer',
+          'Sistema de fallback inteligente e cache de respostas',
+          'Integração nativa com API GLPI para tickets'
         ]
       },
       {
@@ -50,10 +52,12 @@ export const projects: Project[] = [
           'Validação de dados e qualidade das métricas'
         ],
         techDetails: [
-          'Arquitetura complexa com 1800+ linhas de lógica',
-          '15+ endpoints especializados para diferentes métricas',
-          'Sistema de cache inteligente com TTL de 5 minutos',
-          'Fallbacks robustos para operação offline'
+          'Engine de cálculo avançado com 1800+ linhas de lógica',
+          'Arquitetura modular com 15+ endpoints especializados',
+          'Sistema de cache TTL inteligente (5min) com invalidation',
+          'Cálculos server-side otimizados para alta performance',
+          'Algoritmos estatísticos para projeções e tendências',
+          'Fallbacks robustos com operação offline'
         ]
       },
       {
@@ -67,10 +71,12 @@ export const projects: Project[] = [
           'Correção de etapas anteriores'
         ],
         techDetails: [
-          'Sistema robusto com 849 linhas de controle de fluxo',
-          'Integração completa com gerenciador de autenticação GLPI',
-          'Validação rigorosa e progressiva de cada etapa',
-          'Matriz de urgência com 4 níveis hierárquicos'
+          'Máquina de estados avançada com 849 linhas de controle',
+          'Integração completa com Session Manager GLPI',
+          'Sistema de validação progressiva multi-etapas',
+          'Matriz de urgência hierárquica com 4 níveis',
+          'API síncrona para busca de categorias e localizações',
+          'Gerenciamento de observadores múltiplos'
         ]
       },
       {
@@ -84,10 +90,12 @@ export const projects: Project[] = [
           'Drag & drop interface'
         ],
         techDetails: [
-          'Implementação complexa com 634 linhas de controle',
-          'Suporte nativo para imagens, documentos e vídeos',
-          'Limites inteligentes: 10MB padrão, 50MB para vídeos',
-          'API dedicada para processamento de uploads'
+          'Engine de upload avançado com 634 linhas de controle',
+          'Suporte multi-formato: imagens, documentos, vídeos',
+          'Sistema de limites inteligentes (10MB/50MB adaptativos)',
+          'Validação MIME type rigorosa e detecção de malware',
+          'Organização automática por módulos e categorias',
+          'Interface drag & drop com preview em tempo real'
         ]
       },
       {
@@ -101,10 +109,12 @@ export const projects: Project[] = [
           'Toolbar com zoom, pan e download'
         ],
         techDetails: [
-          'Engine robusto com 729 linhas de renderização',
-          'Dupla integração: ApexCharts + ECharts',
-          'Configurações dinâmicas específicas por tipo',
-          'Gerenciamento inteligente de memória e instâncias'
+          'Engine de renderização avançado com 729 linhas de código',
+          'Arquitetura híbrida: ApexCharts + ECharts para máxima flexibilidade',
+          'Sistema de configuração dinâmica por tipo de gráfico',
+          'Gerenciamento inteligente de memória e lifecycle',
+          'Annotations automáticas baseadas em performance de metas',
+          'Toolbar avançada com zoom, pan, export e fullscreen'
         ]
       },
       {
@@ -119,10 +129,12 @@ export const projects: Project[] = [
           'SSL/HTTPS configurado'
         ],
         techDetails: [
-          'Build system moderno com configurações avançadas',
-          'Code splitting granular por funcionalidade',
-          'Otimização agressiva para produção',
-          'Arquitetura modular com 20+ composables reutilizáveis'
+          'Build system Vite com configurações avançadas dual-mode',
+          'Code splitting granular e lazy loading por funcionalidade',
+          'Tree shaking agressivo e minificação otimizada',
+          'Arquitetura modular com 20+ composables reutilizáveis',
+          'WebSocket com heartbeat automático e reconnection',
+          'SSL/HTTPS configurado com certificados Let\'s Encrypt'
         ]
       }
     ]
@@ -130,21 +142,21 @@ export const projects: Project[] = [
   {
     slug: 'equipment-management',
     title: 'Gestão de Equipamentos — Matsuko',
-    description: 'Sistema de reconhecimento e gestão para empilhadeiras industriais; autenticação biométrica/RFID de operadores; comunicação WebSocket com ESP32 via WiFi da rede; monitoramento real‑time de bateria; checklists digitais pré‑operacionais; relatórios pós‑uso automatizados; painel administrativo completo.',
-    tags: ['vue', 'typescript', 'rfid', 'esp32', 'websocket', 'industrial'],
+    description: 'Sistema IoT avançado para gestão inteligente de empilhadeiras industriais. Integra autenticação biométrica/RFID de operadores, comunicação WebSocket real-time com ESP32, monitoramento de bateria e performance, checklists digitais pré-operacionais e relatórios automatizados pós-uso. Inclui painel administrativo completo para controle e análise.',
+    tags: ['Vue 3', 'TypeScript', 'ESP32', 'RFID/Biometria', 'WebSocket', 'IoT Industrial', 'Monitoramento Real-time', 'Automação'],
   },
   {
     slug: 'colegio-maranata-site',
     title: 'Site institucional — Colégio Maranata',
-    description: 'Desenvolvimento do site, criação de layout e manutenção (mar/2024 – mai/2024).',
-    tags: ['web', 'layout', 'manutenção'],
+    description: 'Desenvolvimento completo do site institucional com design responsivo moderno. Criação de layout personalizado, otimização SEO, integração de conteúdo educacional e sistema de manutenção contínua. Projeto realizado entre março e maio de 2024.',
+    tags: ['Design Responsivo', 'HTML5/CSS3', 'JavaScript', 'SEO', 'Site Institucional', 'Layout Personalizado'],
     embedUrl: 'https://colegiomaranata.com.br',
   },
   {
     slug: 'grupo-piovezani-ecommerce',
     title: 'E‑commerce — Grupo Piovezani',
-    description: 'Concepção de layout e desenvolvimento de e‑commerce (ago/2023 – out/2023).',
-    tags: ['ecommerce', 'web', 'design'],
+    description: 'Desenvolvimento de plataforma e-commerce completa com design moderno e funcionalidades avançadas. Criação de layout responsivo, sistema de produtos, carrinho de compras, integração de pagamentos e painel administrativo. Projeto realizado entre agosto e outubro de 2023.',
+    tags: ['E-commerce', 'Design Responsivo', 'Sistema de Pagamentos', 'Carrinho de Compras', 'Painel Admin', 'UX/UI'],
     instagram: 'https://www.instagram.com/grupopiovezani/?hl=en',
   },
 ]

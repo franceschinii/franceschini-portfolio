@@ -77,13 +77,33 @@ export const profile: Profile = {
   ],
   skills: [
     {
-      title: 'Plataformas Web',
-      skills: ['Vue.js', 'TypeScript', 'HTML5/CSS', 'Bootstrap 5', 'Tailwind CSS', 'Design System'],
+      title: 'Frontend & Frameworks',
+      skills: ['Vue 3', 'React', 'Next.js', 'TypeScript', 'JavaScript ES6+', 'HTML5/CSS3', 'Composition API'],
     },
-    { title: 'Back‑end e Dados', skills: ['Node.js', 'SQL', 'Microsoft SQL Server'] },
-    { title: 'UI/UX', skills: ['Figma', 'Responsive Design'] },
-    { title: 'Versionamento', skills: ['Git', 'GitHub'] },
-    { title: 'Automação & IoT', skills: ['ESP‑32', 'C++', 'Integrações industriais'] },
+    {
+      title: 'Styling & Design Systems',
+      skills: ['Tailwind CSS', 'Bootstrap 5', 'Shadcn/UI', 'CSS Modules', 'SCSS/Sass', 'Design System'],
+    },
+    {
+      title: 'Backend & Banco de Dados',
+      skills: ['Node.js', 'API REST', 'SQL Server', 'MySQL', 'Cache TTL', 'WebSocket', 'JWT'],
+    },
+    {
+      title: 'Build Tools & DevOps',
+      skills: ['Vite', 'Webpack', 'Docker', 'Git/GitHub', 'CI/CD', 'SSL/HTTPS', 'Code Splitting'],
+    },
+    {
+      title: 'UI/UX & Design',
+      skills: ['Figma', 'Responsive Design', 'Mobile First', 'Acessibilidade', 'Prototipagem'],
+    },
+    {
+      title: 'Automação & IoT Industrial',
+      skills: ['ESP32', 'C++', 'RFID/Biometria', 'WebSocket Real-time', 'Integração GLPI', 'Arduino'],
+    },
+    {
+      title: 'Ferramentas & Metodologias',
+      skills: ['Scrum/Agile', 'ApexCharts', 'ECharts', 'Tree Shaking', 'Lazy Loading', 'Performance'],
+    },
   ],
   languages: [
     { name: 'Português', level: 'Nativo' },
